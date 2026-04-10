@@ -5,10 +5,10 @@ from .models import TodoItem
 class TodoItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = TodoItem
-        fields = ('id', 'title', 'description', 'completed')
+        fields = ('id', 'title', 'description', 'completed', 'created_at', 'user')
 
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['id', 'username', 'password', 'email']
-#         extra_kwargs = {'password':{'write_only': True}}
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'password', 'email']
+        extra_kwargs = {'password':{'write_only': True}}
